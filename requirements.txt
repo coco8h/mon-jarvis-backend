@@ -1,0 +1,4 @@
+flask
+flask-cors
+google-generativeai
+gunicorn # Serveur web pour la production
