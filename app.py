@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app) # Active CORS pour toutes les routes
 
 # Récupère la clé API de l'environnement (plus sécurisé que de la coder en dur)
-GOOGLE_API_KEY = os.environ.get("AIzaSyA31a_E7kJKd6Ug2YRZ7QC_yibixZ0yzdk") 
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY") # Ou un autre nom que tu choisiras, comme "GEMINI_API_KEY"
 if not GOOGLE_API_KEY:
     raise ValueError("La variable d'environnement GOOGLE_API_KEY n'est pas définie.")
 
