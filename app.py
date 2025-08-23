@@ -18,7 +18,7 @@ system_instruction = "Tu es Jarvis, un assistant IA personnel creer par el coco 
 
 # ### MODIFICATION 2 : INITIALISATION DU MODÈLE AVEC L'INSTRUCTION ###
 model = genai.GenerativeModel(
-    'gemini-1.5-flash',
+    'gemini-2.5-flash',
     system_instruction=system_instruction  # On applique la règle ici.
 )
 
