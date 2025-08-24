@@ -5,9 +5,7 @@ from flask_cors import CORS
 import google.generativeai as genai
 
 app = Flask(__name__)
-# Augmente la taille maximale des requêtes pour accepter des fichiers
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-
 CORS(app)
 
 # Configuration de l'API Key
@@ -22,12 +20,9 @@ except Exception as e:
 system_instruction = "Tu es Jarvis, un assistant IA personnel creer par el coco alias coco8h (ton pere). Tu es serviable, concis et poli. Tu dois impérativement et TOUJOURS répondre en français, quel que soit le langage de la question de l'utilisateur."
 chat_model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=system_instruction)
 
-# Modèle spécifiquement pour l'embedding
-embedding_model = genai.GenerativeModel('models/embedding-001')
-
 @app.route('/')
 def home():
-    return "Jarvis Backend v2.0 (RAG Enabled) is running!"
+    return "Jarvis Backend v3.0 (Drive Integrated) is running!"
 
 @app.route('/ask_jarvis', methods=['POST'])
 def ask_jarvis():
@@ -56,7 +51,6 @@ def ask_jarvis():
         print(f"Erreur /ask_jarvis: {e}")
         return jsonify({"error": str(e)}), 500
 
-# Nouvelle route pour vectoriser du texte
 @app.route('/embed', methods=['POST'])
 def embed_text():
     if not GOOGLE_API_KEY:
@@ -64,7 +58,7 @@ def embed_text():
     
     data = request.json
     text_to_embed = data.get('text')
-    task_type = data.get('task_type', "RETRIEVAL_DOCUMENT") # Par défaut, pour stocker des documents
+    task_type = data.get('task_type', "RETRIEVAL_DOCUMENT")
 
     if not text_to_embed:
         return jsonify({"error": "Aucun texte fourni pour l'embedding"}), 400
