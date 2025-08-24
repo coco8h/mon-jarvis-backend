@@ -2,11 +2,9 @@ flask
 flask-cors
 google-generativeai
 gunicorn
-# Bibliothèques pour Google Drive
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
-# Bibliothèque pour lire les PDFs
 pypdf
-# Bibliothèque pour la base de données vectorielle
-chromadb
+# ON REMPLACE chromadb PAR pinecone-client
+pinecone-client
