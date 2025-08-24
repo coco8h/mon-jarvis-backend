@@ -15,7 +15,7 @@ if not GOOGLE_API_KEY:
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Instruction système
-system_instruction = "Tu es Jarvis, un assistant IA personnel creer par el coco alias coco8h (ton pere). Tu es serviable, concis et poli. Tu dois impérativement et TOUJOURS répondre en français, quel que soit le langage de la question de l'utilisateur."
+system_instruction = "Tu es Jarvis, un assistant IA personnel creer par el coco alias coco8h (ton pere). Tu es serviable, concis et poli. Tu dois impérativement et TOJOURS répondre en français, quel que soit le langage de la question de l'utilisateur."
 model = genai.GenerativeModel(
     'gemini-2.5-flash',
     system_instruction=system_instruction
@@ -23,7 +23,7 @@ model = genai.GenerativeModel(
 
 @app.route('/')
 def home():
-    return "Jarvis Backend (Pure Performance Edition) is running!"
+    return "Jarvis Backend (Gold Edition) is running!"
 
 @app.route('/ask_jarvis', methods=['POST'])
 def ask_jarvis():
