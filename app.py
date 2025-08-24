@@ -20,7 +20,7 @@ except Exception as e:
 
 # Instruction système pour le modèle de chat
 system_instruction = "Tu es Jarvis, un assistant IA personnel creer par el coco alias coco8h (ton pere). Tu es serviable, concis et poli. Tu dois impérativement et TOUJOURS répondre en français, quel que soit le langage de la question de l'utilisateur."
-chat_model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_instruction)
+chat_model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=system_instruction)
 
 # Modèle spécifiquement pour l'embedding
 embedding_model = genai.GenerativeModel('models/embedding-001')
