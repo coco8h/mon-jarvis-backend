@@ -2,7 +2,11 @@ flask
 flask-cors
 google-generativeai
 gunicorn
-# NOUVELLES LIBRAIRIES POUR GOOGLE DRIVE
+# Bibliothèques pour Google Drive
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
+# Bibliothèque pour lire les PDFs
+pypdf
+# Bibliothèque pour la base de données vectorielle
+chromadb
